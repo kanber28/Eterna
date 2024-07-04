@@ -15,7 +15,7 @@ use function PHPUnit\Framework\isNull;
 class Helper extends Notification
 {
     //firebase notification key
-    //public const fcm_notification_key = "key=AAAAfFeeoHU:APA91bFsX04087mBJiE-jczq9TR4DpmVADruZsPcLlEsK7EWnmkST0Y3BugGJIpQ4rSYDb2pGs8ByX3RSNzUhU-r7Qq9nHw-KRnUMoTswIEd3ff3aaBQjim4gXpYanBQZvKJAFrNEXZX";
+    //public const fcm_notification_key = "key=apikey";
 
     public static function pushNotificationToCurl($title, $body, $expoToken, $data, $type){
 
@@ -114,7 +114,7 @@ class Helper extends Notification
         $command =
             'curl -k -H "Content-Type: application/json" -X POST "https://exp.host/--/api/v2/push/send" -d'.
             "'{
-             \"to\":\"ExponentPushToken[30IUgLKfB_MYoJnsvT0Sik]\",
+             \"to\":\"\",
              \"title\":".$title.",
              \"body\":".$body.",
              \"data\":".$data."
@@ -131,7 +131,7 @@ class Helper extends Notification
             $command =
                 'curl -k -H "Content-Type: application/json" -X POST "https://exp.host/--/api/v2/push/send" -d'.
                 "'{
-                 \"to\":[\"ExponentPushToken[w2RKXaGhN7h5H5RHfuE75s]\", \"ExponentPushToken[0erLu3JeuLsKlIQqfOSm60]\"],
+                 \"to\":[\"\", \"\"],
                  \"title\":".$title.",
                  \"body\":".$body.",
                  \"data\":".$data."
@@ -332,7 +332,7 @@ class Helper extends Notification
 
     public static function getWeather()
     {
-        $response = Http::get('https://api.openweathermap.org/data/2.5/weather?q=Maltepe&appid=bea8e829e7b8a327c400923997674dd4&lang=tr&units=metric');
+        $response = Http::get('https://api.openweathermap.org/data/2.5/weather?q=x&appid=apikey&lang=tr&units=metric');
         $response = json_decode($response, true);
         if ($response['cod'] == 200) {
             $weather = \App\Models\WeatherApi::find(1);
