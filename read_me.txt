@@ -1,0 +1,1 @@
+Ticeri projelerin tamamını gösteremememden dolayı kod incelemesi için projelerden kendi yazdığım kısımların bir bölümü repoda bulunmaktadır. görmek istediğiniz bölümler için kod dosyaları açıklayıcı isimleriyle klasörleştirilmiştir.
